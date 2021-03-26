@@ -1,2 +1,2 @@
-# quiz
-Quiz utilizando HTML, CSS e JS;
+# questionario
+Questionário utilizando HTML, CSS e JS;
