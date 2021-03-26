@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
@@ -59,7 +59,7 @@
       function check1(){
         var answer1 = document.getElementById("Nicolau Maquiavel");
         var visor1 = document.getElementById("visor1");
-        var score1 = 0;
+        var score1 = parseInt("00",10);
 
            if (answer1.checked)
            {visor1.value = score1 + 1
@@ -68,7 +68,7 @@
       function check2(){
           var answer2 = document.getElementById("Pablo Picasso");
           var visor2 = document.getElementById("visor2");
-          var score2 = 0;
+          var score2 = parseInt("00",10);
 
             if (answer2.checked)
            {visor2.value = score2 + 1
@@ -77,26 +77,29 @@
       function check3(){
           var answer3 = document.getElementById("Ludwig van Beethoven");
           var visor3 = document.getElementById("visor3");
-          var score3 = 0;
+          var score3 = parseInt("00",10);
 
             if (answer3.checked)
            {visor3.value = score3 + 1
             }else{visor3.value = score3};
              }
       function pontuacao(){
-        var scoref1 = document.getElementById("visor1").value;
-        var scoref2 = document.getElementById("visor2").value;
-        var scoref3 = document.getElementById("visor3").value;
+        var scoref1 = parseInt(document.getElementById("visor1").value);
+        var scoref2 = parseInt(document.getElementById("visor2").value);
+        var scoref3 = parseInt(document.getElementById("visor3").value);
         var visorscore = document.getElementById("visorscore");
         var buttonY = document.getElementById("yes");
         var buttonN = document.getElementById("no");
+        var soma = Number(scoref1 + scoref2 + scoref3)
+        
 
             if (buttonY.checked)
-           {visorscore.value = parseInt(scoref1 + scoref2 + scoref3)
+           {visorscore.value = soma
             }else if(buttonN.checked)
            {visorscore.value = "Por favor, valide todas as respostas para obter sua pontuação!"
             }else{visorscore.value = "Por favor, resposda a última pergunta para obter sua pontuação!"};
              }
         </script>
     </body>
+    
       
