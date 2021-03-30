@@ -1,104 +1,134 @@
-<<!DOCTYPE html>
+DOCTYPE html>
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
         <title>Quiz</title>
         <style type="text/css">
-         
+          body{
+            background-color:#E6E6FA;
+            font-family:Arial;
+          }  
+          div{
+            margin:auto;
+            background-color:#C0C0C0;
+            width:50%;
+            border-radius:15px;
+            padding:0px 1px 1px 0px;
+            
+          }
+          h3{
+            background-color:#778899;
+            color:white;
+            border-bottom: 1px solid #FFFFFF;
+            border-radius:15px 15px 0px 0px;
+            padding:5px;
+            font-family:Arial Black;
+          }
+          #done{
+            text-align:center;
+            padding:1px;
+            background:none;
+            font-family:Arial Black;
+          }
+          button{
+            width: 70px;
+            text-align: center;
+            padding: 5px 0px;
+            border: 1px solid #FFFFFF;
+            border-radius: 6px;
+            background-color:#778899;
+            color:white;
+            font-family:Arial Black;
+          }
+          button:hover{
+            background-color:#000000;
+            color:white;
+            
+          }
+          h1, footer, #enunciated{
+            margin:auto;
+            text-align:center;
+          }
+          #visor{
+            text-align:center;
+            margin:auto;
+            width:50%;
+            height: 30px;
+            border-radius:10px;
+            font-size:20px;
+            border: 1px solid #000000;
+          }
+          
         </style>
     </head>
     <body>
         <header>
-            <h1>Questionário</h1>
+          <h1>Questionário</h1></br>
+          <p id="enunciated">Responda o questionário abaixo sobre conhecimentos gerais, no qual cada resposta certa equivale a 10 pontos;</p>
         </header>
-        <form name="quiz" id="quiz">
-          <div id="question1">
+        <form id="quiz" name="selecao">
+          <div>
               <h3>1.Quem escreveu a famosa obra literaria: “O Príncipe”?</h3> 
                <p><input type="radio" name="question1" id="William Shakespeare" value="William Shakespeare">a) William Shakespeare</p>
-               <p><input type="radio" name="question1" id=" Galileu Galilei" value=" Galileu Galilei">b) Galileu Galilei</p>
+               <p><input type="radio" name="question1" id="Galileu Galilei" value=" Galileu Galilei">b) Galileu Galilei</p>
                <p><input type="radio" name="question1" id="Nicolau Maquiavel" value="Nicolau Maquiavel">c) Nicolau Maquiavel</p><!--resposta certa-->
                <p><input type="radio" name="question1" id="Jean-Jacques Rousseau" value="Jean-Jacques Rousseau">d) Jean-Jacques Rousseau</p>
-            
-               <p><input type="button" name="" id="button1" value="Validar" onclick="check1()"></p>
-               <p><input type="hidden" name="" id="visor1" value="Selecione uma resposta"></p>
           </div>
-           <div id="question2">
+          <div>
               <h3>2.Quem pintou a famosa obra artistica: Guernica?</h3> 
                <p><input type="radio" name="question2" id="Pablo Picasso" value="Pablo Picasso">a) Pablo Picasso</p><!--resposta certa-->
                <p><input type="radio" name="question2" id="Salvador Dali" value="Salvador Dali">b) Salvador Dali</p>
                <p><input type="radio" name="question2" id="Gustav Klimt" value="Gustav Klimt">c) Gustav Klimt</p>
                <p><input type="radio" name="question2" id="Vincent van Gogh" value="Vincent van Gogh">d) Vincent van Gogh</p>
-             
-               <p><input type="button" name="" id="button2" value="Validar" onclick="check2()"></p>
-               <p><input type="hidden" name="" id="visor2" value="Selecione uma resposta"></p>             
-           </div>
-           <div id="question3">
-              <h3>3.Quem compôs a famosa obra musical: Eroica?</h3> 
+          </div>
+          <div>
+               <h3>3.Quem compôs a famosa obra musical: Eroica?</h3> 
                <p><input type="radio" name="question3" id="Wolfgang Amadeus Mozart" value="Wolfgang Amadeus Mozart">a) Wolfgang Amadeus Mozart</p>
                <p><input type="radio" name="question3" id="Ludwig van Beethoven" value="Ludwig van Beethoven">b) Ludwig van Beethoven</p><!--resposta certa-->
                <p><input type="radio" name="question3" id="Johann Sebastian Bach" value="Johann Sebastian Bach">c) Johann Sebastian Bach</p>
-               <p><input type="radio" name="question3" id="Antonio Vivaldi" value="Antonio Vivaldi">d) Antonio Vivaldi</p>
-             
-               <p><input type="button" name="" id="button3" value="Validar" onclick="check3()"></p>
-               <p><input type="hidden" name="" id="visor3" value="Selecione uma resposta"></p>             
-           </div>
-           <div>
-               <h3>Todas as suas respostas foram validadas?</h3>
-               <p><input type="radio" name="done" id="yes" value="yes">Sim</p>
-               <p><input type="radio" name="done" id="no" value="no">Não</p>
-
-               <p><input type="button" name="" id="buttonscore" value="Pontuação" onclick="pontuacao()"></p>
-               <p>Sua pontuação aparecerá aqui:<input type="text" name="" id="visorscore" value=""></p>
+               <p><input type="radio" name="question3" id="Antonio Vivaldi" value="Antonio Vivaldi">d) Antonio Vivaldi</p>             
           </div>
-         </div> 
-        </form>
+          <div id="done">
+               <p><button type="button" id="botao" class="" onclick="enviar()"><strong>Corrigir</strong></button>
+               <button type="button" id="botao2" class="" onclick="refazer();limpar()"><strong>Refazer</strong></button> 
+               <p>Sua pontuação aparecerá aqui: <input type="text" name="" value="" id="visor"></p>
+         </div>
+         </form>
         <footer>
-            <p>&copy;Rodrigo Moreira</p>
+            <p>&copy;RodrigoMoreira</p>
         </footer>
-        <script type="text/javascript">             
-      function check1(){
-        var answer1 = document.getElementById("Nicolau Maquiavel");
-        var visor1 = document.getElementById("visor1");
-        var score1 = parseInt("00",10);
+       <script type="text/javascript"> 
+         var total = 0;
+         var check = false;
+         var checkboxes = document.getElementsByTagName("input");
+         
+         
+          function enviar(){
+            if(document.getElementById("Nicolau Maquiavel").checked){
+              total = total + 10
+            }if(document.getElementById("Pablo Picasso").checked){
+              total = total + 10
+            }if(document.getElementById("Ludwig van Beethoven").checked){
+              total = total + 10
+            }else{
+               total = total
+              };
+            document.getElementById("visor").value = total
+            document.getElementById("botao").disabled = true;
+          };
 
-           if (answer1.checked)
-           {visor1.value = score1 + 1
-            }else{visor1.value = score1};
-             }
-      function check2(){
-          var answer2 = document.getElementById("Pablo Picasso");
-          var visor2 = document.getElementById("visor2");
-          var score2 = parseInt("00",10);
+         function refazer(){
+           document.getElementById("botao").disabled = false;
+           total = 0;
+           document.getElementById("visor").value = total;
+         };
+         
+         function limpar(){
+           for(var i=0, n=checkboxes.length;i<n;i++){
+           checkboxes[i].checked = this.checked;
+           };
+         };      
 
-            if (answer2.checked)
-           {visor2.value = score2 + 1
-            }else{visor2.value = score2};
-             }
-      function check3(){
-          var answer3 = document.getElementById("Ludwig van Beethoven");
-          var visor3 = document.getElementById("visor3");
-          var score3 = parseInt("00",10);
-
-            if (answer3.checked)
-           {visor3.value = score3 + 1
-            }else{visor3.value = score3};
-             }
-      function pontuacao(){
-        var scoref1 = parseInt(document.getElementById("visor1").value);
-        var scoref2 = parseInt(document.getElementById("visor2").value);
-        var scoref3 = parseInt(document.getElementById("visor3").value);
-        var visorscore = document.getElementById("visorscore");
-        var buttonY = document.getElementById("yes");
-        var buttonN = document.getElementById("no");
-        var soma = Number(scoref1 + scoref2 + scoref3)
-        
-
-            if (buttonY.checked)
-           {visorscore.value = soma
-            }else if(buttonN.checked)
-           {visorscore.value = "Por favor, valide todas as respostas para obter sua pontuação!"
-            }else{visorscore.value = "Por favor, resposda a última pergunta para obter sua pontuação!"};
-             }
         </script>
     </body>
     
