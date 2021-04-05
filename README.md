@@ -1,2 +1,2 @@
 # questionario
-Questionário utilizando HTML, CSS e JS;
+Questionário utilizando HTML, CSS e JavaScript;
