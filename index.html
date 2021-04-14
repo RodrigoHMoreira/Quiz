@@ -3,63 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>Quiz</title>
-        <style type="text/css">
-          body{
-            background-color:#E6E6FA;
-            font-family:Arial;
-          }  
-          div{
-            margin:auto;
-            background-color:#C0C0C0;
-            width:50%;
-            border-radius:15px;
-            padding:0px 1px 1px 0px;
-            
-          }
-          h3{
-            background-color:#778899;
-            color:white;
-            border-bottom: 1px solid #FFFFFF;
-            border-radius:15px 15px 0px 0px;
-            padding:5px;
-            font-family:Arial Black;
-          }
-          #done{
-            text-align:center;
-            padding:1px;
-            background:none;
-            font-family:Arial Black;
-          }
-          button{
-            width: 70px;
-            text-align: center;
-            padding: 5px 0px;
-            border: 1px solid #FFFFFF;
-            border-radius: 6px;
-            background-color:#778899;
-            color:white;
-            font-family:Arial Black;
-          }
-          button:hover{
-            background-color:#000000;
-            color:white;
-            
-          }
-          h1, footer, #enunciated{
-            margin:auto;
-            text-align:center;
-          }
-          #visor{
-            text-align:center;
-            margin:auto;
-            width:50%;
-            height: 30px;
-            border-radius:10px;
-            font-size:20px;
-            border: 1px solid #000000;
-          }
-          
-        </style>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
         <header>
@@ -75,14 +19,14 @@
                <p><input type="radio" name="question1" id="Jean-Jacques Rousseau" value="Jean-Jacques Rousseau">d) Jean-Jacques Rousseau</p>
           </div>
           <div>
-              <h3>2.Quem pintou a famosa obra artistica: Guernica?</h3> 
+              <h3>2.Quem pintou a famosa obra artistica: "Guernica"?</h3> 
                <p><input type="radio" name="question2" id="Pablo Picasso" value="Pablo Picasso">a) Pablo Picasso</p><!--resposta certa-->
                <p><input type="radio" name="question2" id="Salvador Dali" value="Salvador Dali">b) Salvador Dali</p>
                <p><input type="radio" name="question2" id="Gustav Klimt" value="Gustav Klimt">c) Gustav Klimt</p>
                <p><input type="radio" name="question2" id="Vincent van Gogh" value="Vincent van Gogh">d) Vincent van Gogh</p>
           </div>
           <div>
-               <h3>3.Quem compôs a famosa obra musical: Eroica?</h3> 
+               <h3>3.Quem compôs a famosa obra musical: "Eroica"?</h3> 
                <p><input type="radio" name="question3" id="Wolfgang Amadeus Mozart" value="Wolfgang Amadeus Mozart">a) Wolfgang Amadeus Mozart</p>
                <p><input type="radio" name="question3" id="Ludwig van Beethoven" value="Ludwig van Beethoven">b) Ludwig van Beethoven</p><!--resposta certa-->
                <p><input type="radio" name="question3" id="Johann Sebastian Bach" value="Johann Sebastian Bach">c) Johann Sebastian Bach</p>
@@ -97,39 +41,7 @@
         <footer>
             <p>&copy;RodrigoMoreira</p>
         </footer>
-       <script type="text/javascript"> 
-         var total = 0;
-         var check = false;
-         var checkboxes = document.getElementsByTagName("input");
-         
-         
-          function enviar(){
-            if(document.getElementById("Nicolau Maquiavel").checked){
-              total = total + 10
-            }if(document.getElementById("Pablo Picasso").checked){
-              total = total + 10
-            }if(document.getElementById("Ludwig van Beethoven").checked){
-              total = total + 10
-            }else{
-               total = total
-              };
-            document.getElementById("visor").value = total
-            document.getElementById("botao").disabled = true;
-          };
-
-         function refazer(){
-           document.getElementById("botao").disabled = false;
-           total = 0;
-           document.getElementById("visor").value = "";
-         };
-         
-         function limpar(){
-           for(var i=0, n=checkboxes.length;i<n;i++){
-           checkboxes[i].checked = this.checked;
-           };
-         };      
-
-        </script>
+       <script type="text/javascript" src="script.js"></script>
     </body>
     
       
