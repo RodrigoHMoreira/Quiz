@@ -2,7 +2,7 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>Quiz</title>
+        <title>Questionário</title>
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
@@ -10,7 +10,7 @@
           <h1>Questionário</h1></br>
           <p id="enunciated">Responda o questionário abaixo sobre conhecimentos gerais, no qual cada resposta certa equivale a 10 pontos;</p>
         </header>
-        <form id="quiz" name="selecao">
+        <form id="quiz" name="selection">
           <div>
               <h3>1.Quem escreveu a famosa obra literaria: “O Príncipe”?</h3> 
                <p><input type="radio" name="question1" id="William Shakespeare" value="William Shakespeare">a) William Shakespeare</p>
@@ -33,8 +33,8 @@
                <p><input type="radio" name="question3" id="Antonio Vivaldi" value="Antonio Vivaldi">d) Antonio Vivaldi</p>             
           </div>
           <div id="done">
-               <p><button type="button" id="botao" class="" onclick="enviar()"><strong>Corrigir</strong></button>
-               <button type="button" id="botao2" class="" onclick="refazer();limpar()"><strong>Refazer</strong></button> 
+               <p><button type="button" id="buttonFinish" class="" onclick="finish()"><strong>Corrigir</strong></button>
+               <button type="button" id="botaoRemake" class="" onclick="remake();clean()"><strong>Refazer</strong></button> 
                <p>Sua pontuação aparecerá aqui: <input type="text" name="" value="" id="visor"></p>
          </div>
          </form>
@@ -43,5 +43,3 @@
         </footer>
        <script type="text/javascript" src="script.js"></script>
     </body>
-    
-      

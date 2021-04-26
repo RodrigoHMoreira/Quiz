@@ -3,7 +3,7 @@ var check = false;
 var checkboxes = document.getElementsByTagName("input");
 
 
- function enviar(){
+ function finish(){
    if(document.getElementById("Nicolau Maquiavel").checked){
      total = total + 10
    }if(document.getElementById("Pablo Picasso").checked){
@@ -14,16 +14,16 @@ var checkboxes = document.getElementsByTagName("input");
       total = total
      };
    document.getElementById("visor").value = total
-   document.getElementById("botao").disabled = true;
+   document.getElementById("buttonFinish").disabled = true;
  };
 
-function refazer(){
-  document.getElementById("botao").disabled = false;
+function remake(){
+  document.getElementById("buttonFinish").disabled = false;
   total = 0;
   document.getElementById("visor").value = "";
 };
 
-function limpar(){
+function clean(){
   for(var i=0, n=checkboxes.length;i<n;i++){
   checkboxes[i].checked = this.checked;
   };
